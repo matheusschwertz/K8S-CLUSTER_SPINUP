@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_key_pair" "k8s-key" {
   key_name = "k8s-key"
-  public_key = "" 
+  public_key = "" pubkey host para chavear a conexão
 
 }
 
