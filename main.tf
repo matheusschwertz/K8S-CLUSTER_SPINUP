@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_key_pair" "k8s-key" {
   key_name = "k8s-key"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILyFtfvxREQLY2FFC9hJsQdyOs5+oE/cAVpzSK1YGHX0 matheusschwertz@gmail.com" 
+  public_key = "" 
 
 }
 
