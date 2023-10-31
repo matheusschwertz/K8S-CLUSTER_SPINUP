@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_key_pair" "k8s-key" {
   key_name = "k8s-key"
-  public_key = "" #my_pub_key
+  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILyFtfvxREQLY2FFC9hJsQdyOs5+oE/cAVpzSK1YGHX0 matheusschwertz@gmail.com" 
 
 }
 
@@ -33,8 +33,8 @@ resource "aws_security_group" "k8s-sg" {
 }
 
 resource "aws_instance" "kubernetes-worker" {
-  ami = #my_image_OS
-  instance_type = #my_ec2_hardware
+  ami = ami-0fc5d935ebf8bc3bc 
+  instance_type = t2.micro 
   key_name = "k8s-key"
   count = 2
   tags = {
@@ -45,8 +45,8 @@ resource "aws_instance" "kubernetes-worker" {
 }
 
 resource "aws_instance" "kubernetes-master" {
-  ami = #my_image_OS
-  instance_type = #my_ec2_hardware
+  ami = ami-0fc5d935ebf8bc3bc 
+  instance_type = t2.micro
   key_name = "k8s-key"
   count = 1
   tags = {
